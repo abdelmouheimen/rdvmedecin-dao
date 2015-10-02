@@ -12,26 +12,26 @@ import javax.persistence.Table;
 public class Creneau extends AbstractEntity {
 
 	private static final long serialVersionUID = 1L;
-	// caractÃ©ristiques d'un crÃ©neau de RV
+	// caractéristiques d'un créneau de RV
 	private int hdebut;
 	private int mdebut;
 	private int hfin;
 	private int mfin;
 
-	// un crÃ©neau est liÃ© Ã  un mÃ©decin
+	// un créneau est lié Ã  un médecin
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_medecin")
 	private Medecin medecin;
 
-	// clÃ© Ã©trangÃ¨re
+	// clé étrangère
 	@Column(name = "id_medecin", insertable = false, updatable = false)
 	private long idMedecin;
 
-	// constructeur par dÃ©faut
+	// constructeur par défaut
 	public Creneau() {
 	}
 
-	// constructeur avec paramÃ¨tres
+	// constructeur avec paramètres
 	public Creneau(Medecin medecin, int hdebut, int mdebut, int hfin, int mfin) {
 		this.medecin = medecin;
 		this.hdebut = hdebut;
@@ -45,7 +45,7 @@ public class Creneau extends AbstractEntity {
 		return String.format("CrÃ©neau[%d, %d, %d, %d:%d, %d:%d]", id, version, idMedecin, hdebut, mdebut, hfin, mfin);
 	}
 
-	// clÃ© Ã©trangÃ¨re
+	// clé étrangère
 	public long getIdMedecin() {
 		return idMedecin;
 	}
