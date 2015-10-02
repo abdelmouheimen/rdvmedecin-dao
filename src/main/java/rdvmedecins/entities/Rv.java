@@ -16,31 +16,31 @@ import javax.persistence.TemporalType;
 public class Rv extends AbstractEntity {
 	private static final long serialVersionUID = 1L;
 
-	// caractéristiques d'un Rv
+	// caractÃ©ristiques d'un Rv
 	@Temporal(TemporalType.DATE)
 	private Date jour;
 
-	// un rv est lié Ã  un client
+	// un rv est liÃ© Ã  un client
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_client")
 	private Client client;
 
-	// un rv est lié à  un créneau
+	// un rv est liÃ© Ã  un crÃ©neau
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "id_creneau")
 	private Creneau creneau;
 
-	// clés étrangères
+	// clÃ©s Ã©trangÃ¨res
 	@Column(name = "id_client", insertable = false, updatable = false)
 	private long idClient;
 	@Column(name = "id_creneau", insertable = false, updatable = false)
 	private long idCreneau;
 
-	// constructeur par défaut
+	// constructeur par dÃ©faut
 	public Rv() {
 	}
 
-	// avec paramètres
+	// avec paramÃ¨tres
 	public Rv(Date jour, Client client, Creneau creneau) {
 		this.jour = jour;
 		this.client = client;
@@ -52,7 +52,7 @@ public class Rv extends AbstractEntity {
 		return String.format("Rv[%d, %s, %d, %d]", id, jour, client.id, creneau.id);
 	}
 
-	// clés étrangères
+	// clÃ©s Ã©trangÃ¨res
 	public long getIdCreneau() {
 		return idCreneau;
 	}

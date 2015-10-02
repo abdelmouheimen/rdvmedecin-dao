@@ -14,11 +14,11 @@ public class Personne extends AbstractEntity {
 	@Column(length = 20)
 	private String prenom;
 
-	// constructeur par défaut
+	// constructeur par dÃ©faut
 	public Personne() {
 	}
 
-	// constructeur avec paramètres
+	// constructeur avec paramÃ¨tres
 	public Personne(String titre, String nom, String prenom) {
 		this.titre = titre;
 		this.nom = nom;

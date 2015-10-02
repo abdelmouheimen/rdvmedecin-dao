@@ -9,11 +9,11 @@ public class Medecin extends Personne {
 
 	private static final long serialVersionUID = 1L;
 
-	// constructeur par défaut
+	// constructeur par dÃ©faut
 	public Medecin() {
 	}
 
-	// constructeur avec paramètres
+	// constructeur avec paramÃ¨tres
 	public Medecin(String titre, String nom, String prenom) {
 		super(titre, nom, prenom);
 	}
